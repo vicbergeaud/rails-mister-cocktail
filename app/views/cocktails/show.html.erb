@@ -1,0 +1,21 @@
+<div class="banner">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <% @cocktail.doses.each do |dose| %>
+      <div class="col-4">
+        <div class="card-category">
+          <%= dose.description %><%= dose.ingredient.name %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <div class="col-6">
+      <%= render "doses/new", cocktail: @cocktail,  dose: @dose %>
+    </div>
+  </div>
