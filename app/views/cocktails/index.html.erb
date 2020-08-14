@@ -1,26 +1,23 @@
-
-<h1>Cocktails</h1>
-<%= cl_image_tag "rfephsgwmw59lminnvhj", width: 200, height: 150, crop: :fill %>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <!-- <th>Image url</th> -->
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail %></td>
-
-        <!-- <td><%#= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<p><%= link_to "Create cocktail", new_cocktail_path %></p>
-
-<br>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path "cock_w8rbdy", height: 300, width: 1000, crop: :fill %>')">
+  <div class="container">
+      <h1>Cocktails</h1>
+      <p> Beverage for nice people </p>
+      <a><%= link_to "Create cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %></a>
+  </div>
+</div>
+    <table>
+      <thead>
+        <tr>
+          <!-- <th>Image url</th> -->
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="container">
+          <p ><% @cocktails.each do |cocktail| %></p>
+              <p class="d-flex justify-content-center"><%= cocktail.name %></p></td>
+              <p class="d-flex justify-content-center"><%= link_to 'What s inside?', cocktail %></p>
+           </div>
+          <% end %>
+      </tbody>
+    </table>
